@@ -2,8 +2,8 @@
 	"package": "YandexStatic",
 	"tagline": "Yandex API",
 	"description": "Yandex is a Russian multinational technology company specializing in Internet-related services and products. Yandex operates the largest search engine in Russia with about 65% market share in that country.The Static API generates a map image based on the parameter values passed to the service.",
-	"image": "https://lh3.googleusercontent.com/-kN9hEkXi1fY/AAAAAAAAAAI/AAAAAAAACGg/SadVXk_e3Q4/s640/photo.jpg",
-	"repo": "",
+	"image": "https://logo.clearbit.com/yandex.com",
+	"repo": "https://github.com/RapidSoftwareSolutions/Marketplace-YandexStatic-Package",
 	"keywords": [
 		"API",
 		"Static",
@@ -14,9 +14,7 @@
 	],
 	"accounts": {
 		"domain": "yandex.com",
-    "credentials": [
-      "key"
-    ]
+    "credentials": [   ]
 	},
 	"blocks": [
 
@@ -24,25 +22,32 @@
 			"name": "getStaticMap",
 			"description": "The Static API generates a map image in accordance with the values ​​of the parameters passed to the service.",
 			"args": [{
-					"name": "l",
+					"name": "mapType",
 					"type": "List",
 					"info": "The list of layers that determine the type of map: map and sat, skl (hybrid),trf.",
-					"required": true
+					"required": true,
+            "structure": {
+              "name": "mapType",
+              "type": "Select",
+              "options": ["map", "sat","skl","trf"],
+              "info": "Select type map",
+              "required": true
+            }
 				},
 				{
-					"name": "ll",
+					"name": "mapCenter",
 					"type": "Map",
 					"info": "Longitude and latitude of the center of the map in degrees.",
 					"required": true
 				},
 				{
-					"name": "spn",
+					"name": "mapExtent",
 					"type": "String",
 					"info": "The length of the map display area by longitude and latitude (in degrees).",
 					"required": false
 				},
 				{
-					"name": "z",
+					"name": "mapCaliber",
 					"type": "Number",
 					"info": "The zoom level of the map (0-17).",
 					"required": false
@@ -60,13 +65,13 @@
 					"required": false
 				},
 				{
-					"name": "pt",
+					"name": "descLabel",
 					"type": "String",
 					"info": "Contains descriptions of one or more labels that you want to display on the map.",
 					"required": false
 				},
 				{
-					"name": "pl",
+					"name": "descFigure",
 					"type": "String",
 					"info": "Contains a set of descriptions of geometric shapes (polygons and polygons) that you want to display on the map.",
 					"required": false
@@ -74,12 +79,12 @@
 				{
 					"name": "lang",
 					"type": "String",
-					"info": "API allows you to display maps, localized in different languages, taking into account the specifics of individual countries.",
+					"info": "API allows you to display maps, localized in different languages, taking into account the specifics of individual countries.Example - en_US.",
 					"required": false
 				},
 				{
 					"name": "key",
-					"type": "Credentials",
+					"type": "String",
 					"info": "API Yandex key.",
 					"required": false
 				}
