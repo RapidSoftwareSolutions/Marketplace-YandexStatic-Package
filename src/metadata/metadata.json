@@ -1,0 +1,102 @@
+{
+	"package": "YandexStatic",
+	"tagline": "Yandex API",
+	"description": "Yandex is a Russian multinational technology company specializing in Internet-related services and products. Yandex operates the largest search engine in Russia with about 65% market share in that country.The Static API generates a map image based on the parameter values passed to the service.",
+	"image": "https://lh3.googleusercontent.com/-kN9hEkXi1fY/AAAAAAAAAAI/AAAAAAAACGg/SadVXk_e3Q4/s640/photo.jpg",
+	"repo": "",
+	"keywords": [
+		"API",
+		"Static",
+		"Map",
+		"Yandex",
+		"Coordinates",
+		"Address"
+	],
+	"accounts": {
+		"domain": "yandex.com",
+    "credentials": [
+      "key"
+    ]
+	},
+	"blocks": [
+
+		{
+			"name": "getStaticMap",
+			"description": "The Static API generates a map image in accordance with the values ​​of the parameters passed to the service.",
+			"args": [{
+					"name": "l",
+					"type": "List",
+					"info": "The list of layers that determine the type of map: map and sat, skl (hybrid),trf.",
+					"required": true
+				},
+				{
+					"name": "ll",
+					"type": "Map",
+					"info": "Longitude and latitude of the center of the map in degrees.",
+					"required": true
+				},
+				{
+					"name": "spn",
+					"type": "String",
+					"info": "The length of the map display area by longitude and latitude (in degrees).",
+					"required": false
+				},
+				{
+					"name": "z",
+					"type": "Number",
+					"info": "The zoom level of the map (0-17).",
+					"required": false
+				},
+				{
+					"name": "size",
+					"type": "String",
+					"info": "The width and height of the requested map image (in pixels), see Map size. The default value is 450x450.",
+					"required": false
+				},
+				{
+					"name": "scale",
+					"type": "String",
+					"info": "The coefficient of magnification of objects on the map. Can take a fractional value from 1.0 to 4.0.",
+					"required": false
+				},
+				{
+					"name": "pt",
+					"type": "String",
+					"info": "Contains descriptions of one or more labels that you want to display on the map.",
+					"required": false
+				},
+				{
+					"name": "pl",
+					"type": "String",
+					"info": "Contains a set of descriptions of geometric shapes (polygons and polygons) that you want to display on the map.",
+					"required": false
+				},
+				{
+					"name": "lang",
+					"type": "String",
+					"info": "API allows you to display maps, localized in different languages, taking into account the specifics of individual countries.",
+					"required": false
+				},
+				{
+					"name": "key",
+					"type": "Credentials",
+					"info": "API Yandex key.",
+					"required": false
+				}
+
+			],
+			"callbacks": [{
+					"name": "error",
+					"info": "Error"
+				},
+				{
+					"name": "success",
+					"info": "Success"
+				}
+			]
+		}
+	]
+
+
+
+}
