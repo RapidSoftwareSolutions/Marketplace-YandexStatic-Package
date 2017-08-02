@@ -1,4 +1,4 @@
-[![](https://scdn.rapidapi.com/RapidAPI_banner.png)](https://rapidapi.com/package/Yandex/functions?utm_source=RapidAPIGitHub_YandexFunctions&utm_medium=button&utm_content=RapidAPI_GitHub)
+﻿[![](https://scdn.rapidapi.com/RapidAPI_banner.png)](https://rapidapi.com/package/Yandex/functions?utm_source=RapidAPIGitHub_YandexFunctions&utm_medium=button&utm_content=RapidAPI_GitHub)
 
 # YandexStatic Package
 Yandex is a Russian multinational technology company specializing in Internet-related services and products. Yandex operates the largest search engine in Russia with about 65% market share in that country.Yandex operates the largest search engine in Russia with about 65% market share in that country.The Static API generates a map image based on the parameter values passed to the service.
@@ -7,6 +7,7 @@ Yandex is a Russian multinational technology company specializing in Internet-re
 ## How to get credentials:
 1. Navigate to [Developers Console](https://developer.tech.yandex.com/keys).
 2. Create API app.
+
 
 ## Custom datatypes:
   |Datatype|Description|Example
