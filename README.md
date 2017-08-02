@@ -3,7 +3,6 @@
 # YandexStatic Package
 Yandex is a Russian multinational technology company specializing in Internet-related services and products. Yandex operates the largest search engine in Russia with about 65% market share in that country.Yandex operates the largest search engine in Russia with about 65% market share in that country.The Static API generates a map image based on the parameter values passed to the service.
 * Domain: [yandex.com](https://yandex.com)
-* Credentials: apiKey, key
 
 ## How to get credentials:
 1. Navigate to [Developers Console](https://developer.tech.yandex.com/keys).
@@ -25,8 +24,8 @@ The Static API generates a map image in accordance with the values ​​of the 
 
 | Field| Type       | Description
 |------|------------|----------
-| l    | list       | The list of layers that determine the type of map: map and sat, skl (hybrid),trf.
-| ll   | map        | Longitude and latitude of the center of the map in degrees.
+| l    | List       | The list of layers that determine the type of map: map and sat, skl (hybrid),trf.
+| ll   | Map        | Longitude and latitude of the center of the map in degrees.
 | spn  | String     | The length of the map display area by longitude and latitude (in degrees).
 | z    | Number     | The zoom level of the map (0-17).
 | size | String     | The width and height of the requested map image (in pixels), see Map size. The default value is 450x450.
@@ -34,5 +33,5 @@ The Static API generates a map image in accordance with the values ​​of the 
 | pt   | String     | Contains descriptions of one or more labels that you want to display on the map.
 | pl   | String     | Contains a set of descriptions of geometric shapes (polygons and polygons) that you want to display on the map.
 | lang | String     | API allows you to display maps, localized in different languages, taking into account the specifics of individual countries.
-| key  | credentials| API Yandex key.
+| key  | Credentials| API Yandex key.
 
