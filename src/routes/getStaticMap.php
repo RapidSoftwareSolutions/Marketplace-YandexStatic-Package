@@ -32,6 +32,9 @@
 
     $url = 'https://static-maps.yandex.ru/1.x/';
     $client = $this->httpClient;
+        
+    $part = explode(',',$postData['args']['mapCenter']);
+    $postData['args']['mapCenter'] = implode(',',array_reverse($part));
 
     foreach($option as $alias => $value)
     {
