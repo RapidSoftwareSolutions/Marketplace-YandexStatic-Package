@@ -50,7 +50,7 @@
 				{
 					"name": "viewportRange",
 					"type": "String",
-					"info": "The length of the map display area by longitude and latitude (in degrees).",
+					"info": "The length of the map display area by longitude and latitude (in degrees). Example - 0.01,0.01",
 					"required": false
 				},
 				{
@@ -62,7 +62,7 @@
 				{
 					"name": "size",
 					"type": "String",
-					"info": "The width and height of the requested map image (in pixels), see Map size. The default value is 450x450.",
+					"info": "The width and height of the requested map image (in pixels), see Map size. The default value is 450x450.Example - 400,400.",
 					"required": false
 				},
 				{
