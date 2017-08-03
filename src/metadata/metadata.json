@@ -24,7 +24,7 @@
 			"args": [{
 					"name": "mapType",
 					"type": "String",
-					"info": "The list of layers that determine the type of map: map and sat, skl (hybrid),trf.",
+					"info": "The list of layers that determine the type of map.",
 					"required": true,
             "structure": {
               "name": "mapType",
