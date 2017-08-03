@@ -81,12 +81,6 @@
 					"type": "String",
 					"info": "API allows you to display maps, localized in different languages, taking into account the specifics of individual countries.Example - en_US.",
 					"required": false
-				},
-				{
-					"name": "key",
-					"type": "String",
-					"info": "API Yandex key.",
-					"required": false
 				}
 
 			],
