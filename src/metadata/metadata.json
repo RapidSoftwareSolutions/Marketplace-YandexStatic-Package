@@ -23,7 +23,7 @@
 			"description": "The Static API generates a map image in accordance with the values ​​of the parameters passed to the service.",
 			"args": [{
 					"name": "mapType",
-					"type": "String",
+					"type": "List",
 					"info": "The list of layers that determine the type of map.",
 					"required": true,
             "structure": {
