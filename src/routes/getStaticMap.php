@@ -34,6 +34,12 @@
     $client = $this->httpClient;
         
     $part = explode(',',$postData['args']['mapCenter']);
+        if(!empty($part[0]) && !empty($pArt[1]))
+{
+  $part[0] = trim($part[0]);
+  $part[1] = trim($part[1]);
+}
+
     $postData['args']['mapCenter'] = implode(',',array_reverse($part));
 
     foreach($option as $alias => $value)
