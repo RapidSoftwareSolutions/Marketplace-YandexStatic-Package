@@ -8,17 +8,17 @@
     $option = array(
     'mapType' => 'l',
     'mapCenter' => 'll',
-    'mapExtent' => 'spn',
-    'mapCaliber' => 'z',
+    'viewportRange' => 'spn',
+    'zoom' => 'z',
     'size' => 'size',
     'scale' => 'scale',
-    'descLabel' => 'pt',
-    'descFigure' => 'pl',
+    'markersDefinitions' => 'pt',
+    'geoFiguresDefinitions' => 'pl',
     'lang' => 'lang',
     'key' => 'key'
     );
     $arrayType = array('mapType');
-
+    $tildaType = array('markersDefinitions','geoFiguresDefinitions');
     $settings = $this->settings;
     $checkRequest = $this->validation;
     $validateRes = $checkRequest->validate($request, ['mapType','mapCenter']);
@@ -32,16 +32,32 @@
 
     $url = 'https://static-maps.yandex.ru/1.x/';
     $client = $this->httpClient;
-        
+
+
+    //alias for element map type
+    foreach($postData['args']['mapType'] as $key => $value)
+    {
+      if($value == 'satellite')
+      {
+        $postData['args']['mapType'][$key] = 'sat';
+      }
+
+      if($value == 'geographicalNames')
+      {
+        $postData['args']['mapType'][$key] = 'skl';
+      }
+    }
+
     $part = explode(',',$postData['args']['mapCenter']);
         if(!empty($part[0]) && !empty($part[1]))
-{
-  $part[0] = trim($part[0]);
-  $part[1] = trim($part[1]);
-}
+        {
+          $part[0] = trim($part[0]);
+          $part[1] = trim($part[1]);
+        }
 
     $postData['args']['mapCenter'] = implode(',',array_reverse($part));
 
+    //set alias
     foreach($option as $alias => $value)
     {
       if(!empty($postData['args'][$alias]))
@@ -50,8 +66,21 @@
           {
             $postData['args'][$alias] = implode(',',$postData['args'][$alias]);
           }
+
+          if(in_array($alias,$tildaType))
+          {
+            $postData['args'][$alias] = implode('~',$postData['args'][$alias]);
+          }
+
           $queryParam[$value] = $postData['args'][$alias];
       }
+    }
+
+
+    //for include traffic
+    if(isset($postData['args']['showTraffic']) && $postData['args']['showTraffic'] == 'on')
+    {
+      $queryParam['l'] .= ',trf';
     }
 
 
@@ -65,7 +94,7 @@
            {
              $fullUrl .= '&'.$key.'='.$value;
            }
-           $result['contextWrites']['to'] =  $fullUrl;
+           $result['contextWrites']['to'] = array('status' => 'success','result' => ["link" => $fullUrl]);
        } else {
            $result['callback'] = 'error';
            $result['contextWrites']['to']['status_code'] = 'API_ERROR';
@@ -99,3 +128,4 @@
    }
    return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($result);
 });
+

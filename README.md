@@ -25,12 +25,14 @@ The Static API generates a map image in accordance with the values ​​of the 
 
 | Field| Type       | Description
 |------|------------|----------
-| mapType    | List       | The list of layers that determine the type of map: map and sat, skl (hybrid),trf.
+| mapType    | List       | The list of layers that determine the type of map.
 | mapCenter   | Map        | Longitude and latitude of the center of the map in degrees.
-| mapExtent  | String     | The length of the map display area by longitude and latitude (in degrees).
-| mapCaliber    | Number     | The zoom level of the map (0-17).
+| viewportRange  | String     | The length of the map display area by longitude and latitude (in degrees).
+| zoom    | Number     | The zoom level of the map (0-17).
 | size | String     | The width and height of the requested map image (in pixels), see Map size. The default value is 450x450.
 | scale| String     | The coefficient of magnification of objects on the map. Can take a fractional value from 1.0 to 4.0.
-| descLabel   | String     | Contains descriptions of one or more labels that you want to display on the map.
-| descFigure   | String     | Contains a set of descriptions of geometric shapes (polygons and polygons) that you want to display on the map.
+| markersDefinitions   | List     | Contains descriptions of one or more labels that you want to display on the map.
+| geoFiguresDefinitions   | List     | Contains a set of descriptions of geometric shapes (polygons and polygons) that you want to display on the map.
 | lang | String     | API allows you to display maps, localized in different languages, taking into account the specifics of individual countries.
+| showTraffic | List     | Show traffic.
+

@@ -23,13 +23,13 @@
 			"description": "The Static API generates a map image in accordance with the values ​​of the parameters passed to the service.",
 			"args": [{
 					"name": "mapType",
-					"type": "List",
+					"type": "String",
 					"info": "The list of layers that determine the type of map: map and sat, skl (hybrid),trf.",
 					"required": true,
             "structure": {
               "name": "mapType",
               "type": "Select",
-              "options": ["map", "sat","skl","trf"],
+              "options": ["map","satellite","geographicalNames"],
               "info": "Select type map",
               "required": true
             }
@@ -41,13 +41,20 @@
 					"required": true
 				},
 				{
-					"name": "mapExtent",
+					"name": "showTraffic",
+					"type": "Select",
+					 "options": ["on", "off"],
+					"info": "Show traffic on map.",
+					"required": false
+				},
+				{
+					"name": "viewportRange",
 					"type": "String",
 					"info": "The length of the map display area by longitude and latitude (in degrees).",
 					"required": false
 				},
 				{
-					"name": "mapCaliber",
+					"name": "zoom",
 					"type": "Number",
 					"info": "The zoom level of the map (0-17).",
 					"required": false
@@ -55,7 +62,7 @@
 				{
 					"name": "size",
 					"type": "String",
-					"info": "The width and height of the requested map image (in pixels), see Map size. The default value is 450x450.Example 400,400.",
+					"info": "The width and height of the requested map image (in pixels), see Map size. The default value is 450x450.",
 					"required": false
 				},
 				{
@@ -65,23 +72,39 @@
 					"required": false
 				},
 				{
-					"name": "descLabel",
-					"type": "String",
-					"info": "Contains descriptions of one or more labels that you want to display on the map.",
-					"required": false
-				},
-				{
-					"name": "descFigure",
-					"type": "String",
-					"info": "Contains a set of descriptions of geometric shapes (polygons and polygons) that you want to display on the map.",
-					"required": false
-				},
-				{
 					"name": "lang",
 					"type": "String",
 					"info": "API allows you to display maps, localized in different languages, taking into account the specifics of individual countries.Example - en_US.",
 					"required": false
-				}
+				},
+				{
+					"name": "key",
+					"type": "String",
+					"info": "API Yandex key.",
+					"required": false
+				},
+				{
+			 "name": "markersDefinitions",
+			 "type": "List",
+			 "info": "Contains descriptions of one or more labels that you want to display on the map.",
+			 "required": false,
+			 "structure": {
+				 "name": "Marker",
+				 "type": "String",
+				 "info": "Marker definition."
+			 }
+		 },
+			 {
+			"name": "geoFiguresDefinitions",
+			"type": "List",
+			"info": "Contains a set of descriptions of geometric shapes (polygons and polygons) that you want to display on the map.",
+			"required": false,
+			"structure": {
+				"name": "Marker",
+				"type": "String",
+				"info": "Marker definition."
+			}
+		}
 
 			],
 			"callbacks": [{
