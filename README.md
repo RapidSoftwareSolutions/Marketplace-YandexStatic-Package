@@ -34,4 +34,3 @@ The Static API generates a map image in accordance with the values ​​of the 
 | descLabel   | String     | Contains descriptions of one or more labels that you want to display on the map.
 | descFigure   | String     | Contains a set of descriptions of geometric shapes (polygons and polygons) that you want to display on the map.
 | lang | String     | API allows you to display maps, localized in different languages, taking into account the specifics of individual countries.
-| key  | String| API Yandex key.
