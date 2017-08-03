@@ -55,7 +55,7 @@
 				{
 					"name": "size",
 					"type": "String",
-					"info": "The width and height of the requested map image (in pixels), see Map size. The default value is 450x450.",
+					"info": "The width and height of the requested map image (in pixels), see Map size. The default value is 450x450.Example 400,400.",
 					"required": false
 				},
 				{
