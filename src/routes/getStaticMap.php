@@ -34,7 +34,7 @@
     $client = $this->httpClient;
         
     $part = explode(',',$postData['args']['mapCenter']);
-        if(!empty($part[0]) && !empty($pArt[1]))
+        if(!empty($part[0]) && !empty($part[1]))
 {
   $part[0] = trim($part[0]);
   $part[1] = trim($part[1]);
