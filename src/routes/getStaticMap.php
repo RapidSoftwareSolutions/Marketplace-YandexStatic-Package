@@ -97,9 +97,9 @@
 
            if(in_array($resp->getStatusCode(),['400']))
            {
-             $result['contextWrites']['to'] = array('status' => 'error','result' => $resp->getBody()->getContents());
+             $result['contextWrites']['to'] = array('status' => 'error','result' => json_encode($resp->getBody()->getContents()) );
            } else {
-             $result['contextWrites']['to'] = array('status' => 'success','result' => ["link" => $fullUrl]); 
+             $result['contextWrites']['to'] = array('status' => 'success','result' => ["link" => $fullUrl]);
            }
 
 
