@@ -87,14 +87,22 @@
 
     $resp =  $client->request('GET', $url ,['query' => $queryParam ] );
    try {
-       if(in_array($resp->getStatusCode(), ['200', '201', '202', '203', '204'])) {
+       if(in_array($resp->getStatusCode(), ['200', '201', '202', '203', '204','400'])) {
            $result['callback'] = 'success';
            $fullUrl = $url.'?';
            foreach($queryParam as $key => $value)
            {
              $fullUrl .= '&'.$key.'='.$value;
            }
-           $result['contextWrites']['to'] = array('status' => 'success','result' => ["link" => $fullUrl]);
+
+           if(in_array($resp->getStatusCode(),['400']))
+           {
+             $result['contextWrites']['to'] = array('status' => 'error','result' => $resp->getBody()->getContents());
+           } else {
+             $result['contextWrites']['to'] = array('status' => 'success','result' => ["link" => $fullUrl]); 
+           }
+
+
        } else {
            $result['callback'] = 'error';
            $result['contextWrites']['to']['status_code'] = 'API_ERROR';
@@ -128,4 +136,3 @@
    }
    return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($result);
 });
-
