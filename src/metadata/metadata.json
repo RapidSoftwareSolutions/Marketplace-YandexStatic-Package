@@ -50,19 +50,19 @@
 				{
 					"name": "viewportRange",
 					"type": "String",
-					"info": "The length of the map display area by longitude and latitude (in degrees). Example - 0.01,0.01",
+					"info": "The length of the map display area by longitude and latitude (in degrees). Can not be used with zoom parameter. Example - 0.01,0.01",
 					"required": false
 				},
 				{
 					"name": "zoom",
 					"type": "Number",
-					"info": "The zoom level of the map (0-17).",
+					"info": "The zoom level of the map (0-17).Can not be used with viewportRange parameter.",
 					"required": false
 				},
 				{
 					"name": "size",
 					"type": "String",
-					"info": "The width and height of the requested map image (in pixels), see Map size. The default value is 450x450.Example - 400,400.",
+					"info": "The width and height of the requested map image (in pixels), see Map size. The default value is 650x450.Example - 400,400.",
 					"required": false
 				},
 				{

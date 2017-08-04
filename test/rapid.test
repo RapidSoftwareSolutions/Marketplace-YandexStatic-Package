@@ -1,0 +1,64 @@
+{
+	"name": "YandexStatic",
+	"description": "Yandex is a Russian multinational technology company specializing in Internet-related services and products. Yandex operates the largest search engine in Russia with about 65% market share in that country.The Static API generates a map image based on the parameter values passed to the service.",
+	"connect": {
+		"username": "qa-project",
+		"password": "481bab2d-e8fe-4214-8714-bab8157356e4"
+	},
+	"dependencies": {
+
+	},
+	"blocks": [
+		{
+			"name": "getStaticMap",
+			"note": "",
+			"skip": false,
+			"params": [
+				{
+					"key": "mapType",
+					"value": ["map"]
+				},
+				{
+					"key": "mapCenter",
+					"value": "55.753630,37.620070"
+				},
+				{
+					"key": "showTraffic",
+					"value": "On"
+				},
+				{
+					"key": "viewportRange",
+					"value": "0.01,0.01"
+				},
+				{
+					"key": "zoom",
+					"value": 12
+				},
+				{
+					"key": "size",
+					"value": "450,450"
+				},
+				{
+					"key": "scale",
+					"value": "2.0"
+				},
+				{
+					"key": "lang",
+					"value": "ru_RU"
+				},
+				{
+					"key": "key",
+					"value": ""
+				},
+				{
+					"key": "markersDefinitions",
+					"value": ["37.620070,55.753630,pmwtm1"]
+				},
+				{
+					"key": "geoFiguresDefinitions",
+					"value": ["c:ff0000ff,w:3,80peAuGUQQMIUgAAAAAAAAAAAAAQJwAA"]
+				}
+			]
+		}
+	]
+}
